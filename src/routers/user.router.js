@@ -9,7 +9,6 @@ const {
 const {
   existUserFalseMiddleware,
   existUserTrueMiddleware,
-
 } = require(`../middlewares`)
 
 const userRouter = Router();

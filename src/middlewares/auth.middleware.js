@@ -16,7 +16,6 @@ const {
 } = require(`../utils`)
 
 module.exports = async (req, res, next) => {
-
   try {
     const user = req.body
     const isUserInDB = await readUserFromEmailService(user.email)

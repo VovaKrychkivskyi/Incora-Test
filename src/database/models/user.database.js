@@ -15,7 +15,7 @@ UserModel.init({
     type: DataTypes.STRING
   },
   phone: {
-    type: DataTypes.INTEGER
+    type: DataTypes.STRING
   },
   password: {
     type: DataTypes.STRING

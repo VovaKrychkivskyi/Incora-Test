@@ -6,7 +6,6 @@ const {
 } = require(`../services`)
 
 module.exports = {
-
   login: async (req, res, next) => {
     try {
       const tokens = {
@@ -14,6 +13,7 @@ module.exports = {
         "access_token": req.access_token,
         "refresh_token": req.refresh_token
       }
+
       await sendTokenInDBService(tokens)
       res.end(tokens)
 

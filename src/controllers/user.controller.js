@@ -8,7 +8,6 @@ const {
 const {hashedPassword} = require(`../utils`)
 
 module.exports = {
-
   createUser: async (req, res, next) => {
     try {
       req.body.password = await hashedPassword(req.body.password);

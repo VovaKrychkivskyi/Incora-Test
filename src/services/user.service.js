@@ -1,7 +1,6 @@
 const UserModel = require(`../database/models/user.database`)
 
 module.exports = {
-
   createUserService: async (user) => {
     return await UserModel.create(user)
   },

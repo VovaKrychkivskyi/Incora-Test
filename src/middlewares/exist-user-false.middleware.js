@@ -10,8 +10,8 @@ const {
   statusCodes
 } = require(`../errors`)
 const {joiValidation} = require(`../utils`)
-module.exports = async (req, res, next) => {
 
+module.exports = async (req, res, next) => {
   try {
     const {email} = req.body
     const user = await readUserFromIdService(email)

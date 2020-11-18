@@ -3,14 +3,15 @@ const {
     readUserFromIdService
   }
 } = require(`../services`);
+
 const {
   ErrorHandler,
   errors,
   statusCodes
 } = require(`../errors`)
 const {joiValidation} = require(`../utils`)
-module.exports = async (req, res, next) => {
 
+module.exports = async (req, res, next) => {
   try {
     const {id} = req.params;
     const user = await readUserFromIdService(id)
