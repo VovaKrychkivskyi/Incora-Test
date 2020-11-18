@@ -4,7 +4,6 @@ const {
     login
   }
 } = require(`../controllers`)
-
 const {authMiddleware} = require(`../middlewares`)
 
 const loginRouter = Router();

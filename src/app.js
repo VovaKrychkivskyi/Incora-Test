@@ -1,9 +1,9 @@
 const express = require(`express`);
 const app = express();
 
-app.use(express.json());
-
 const {mainRouter} = require(`./routers`)
+
+app.use(express.json());
 app.use(`/`, mainRouter);
 
 app.use('*', (err, req, res, next) => {
@@ -13,6 +13,6 @@ app.use('*', (err, req, res, next) => {
       message: err.message || 'NOT FOUND',
       code: err.customCode || ''
     })
-});
+})
 
 module.exports = app;

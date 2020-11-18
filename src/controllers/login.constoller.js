@@ -12,15 +12,13 @@ module.exports = {
       const tokens = {
         "user_id": req.id,
         "access_token": req.access_token,
-        "refresh_token":req.refresh_token
+        "refresh_token": req.refresh_token
       }
       await sendTokenInDBService(tokens)
-      res.json(tokens)
-
+      res.end(tokens)
 
     } catch (e) {
       next(e)
     }
   }
-
 }
