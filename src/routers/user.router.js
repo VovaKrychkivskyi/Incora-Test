@@ -8,7 +8,8 @@ const {
 } = require(`../controllers`)
 const {
   existUserFalseMiddleware,
-  existUserTrueMiddleware
+  existUserTrueMiddleware,
+
 } = require(`../middlewares`)
 
 const userRouter = Router();

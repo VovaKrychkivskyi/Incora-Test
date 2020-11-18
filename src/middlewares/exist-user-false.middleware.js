@@ -9,7 +9,7 @@ const {
   errors,
   statusCodes
 } = require(`../errors`)
-
+const {joiValidation} = require(`../utils`)
 module.exports = async (req, res, next) => {
 
   try {
@@ -23,6 +23,16 @@ module.exports = async (req, res, next) => {
         errors.BAD_REQUEST_EMAIL_EXISTS.code,
       ))
     }
+
+    const {error} = joiValidation.validate(req.body)
+
+    if (error) {
+      return next(new ErrorHandler(
+        error.details[0].message,
+        statusCodes.BAD_REQUEST,
+        errors.BAD_REQUEST_NOT_VALID_USER.code))
+    }
+
     next()
 
   } catch (e) {
