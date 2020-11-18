@@ -39,6 +39,7 @@ module.exports = async (req, res, next) => {
         statusCodes.BAD_REQUEST,
         errors.BAD_REQUEST_NOT_VALID_USER.message)
     }
+
     const {access_token, refresh_token} = token
 
     req.access_token = access_token
